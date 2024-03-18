@@ -110,8 +110,8 @@ convert_dp_to_dapps <- function(dp_fpath) {
   # e0 = life expectancy at birth
   Mortality_Summary <- data.frame(
     year = proj_years,
-    m_e0 = as.numeric(dp_ext(dp, tag = "LE - Male - Input Assumption", rows = 1, cols = (1:n_proj_cols) + offsetcol)),
-    f_e0 = as.numeric(dp_ext(dp, tag = "LE - Female - Input Assumption", rows = 1, cols = (1:n_proj_cols) + offsetcol)),
+    m_e0 = as.numeric(dp_ext(dp, tag = "Adj LE", rows = 2, cols = (1:n_proj_cols) + offsetcol)),
+    f_e0 = as.numeric(dp_ext(dp, tag = "Adj LE", rows = 3, cols = (1:n_proj_cols) + offsetcol)),
     m_imr = as.numeric(dp_ext(dp, tag = "IMR - Male", rows = 1, cols = (1:n_proj_cols) + offsetcol)),
     f_imr = as.numeric(dp_ext(dp, tag = "IMR - Female", rows = 1, cols = (1:n_proj_cols) + offsetcol)),
     m_cmr = NA,
@@ -207,8 +207,8 @@ convert_dp_to_dapps <- function(dp_fpath) {
   # List 1.12: Life Expectancy at Birth
   Life_Expectancy_at_Birth <- data.frame(
     year = proj_years,
-    m_e0 = as.numeric(dp_ext(dp, tag = "LE - Male - Input Assumption", rows = 1, cols = (1:n_proj_cols) + offsetcol)),
-    f_e0 = as.numeric(dp_ext(dp, tag = "LE - Female - Input Assumption", rows = 1, cols = (1:n_proj_cols) + offsetcol))
+    m_e0 = as.numeric(dp_ext(dp, tag = "Adj LE", rows = 2, cols = (1:n_proj_cols) + offsetcol)),
+    f_e0 = as.numeric(dp_ext(dp, tag = "Adj LE", rows = 3, cols = (1:n_proj_cols) + offsetcol))
   )
 
   names(Life_Expectancy_at_Birth) <- c("Year", "Male e0", "Female e0")
